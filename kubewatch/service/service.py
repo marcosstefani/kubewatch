@@ -5,7 +5,7 @@ from model.kubernetes import get_information, Element
 
 class ServiceService:
     @classmethod
-    def getAll(cls):
+    def all(cls):
         values = get_information(Element.SERVICE)
         print (values)
         services = []

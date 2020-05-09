@@ -5,13 +5,14 @@ from service.pod import PodService
 from service.service import ServiceService
 from service.persistent_volume import PersistentVolumeService
 from service.persistent_volume_claim import PersistentVolumeClaimService
+from service.replica_set import ReplicaSetService
 
 app = Flask(__name__)
 api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return PersistentVolumeClaimService.getAll()
+        return ReplicaSetService.all()
 
 api.add_resource(HelloWorld, '/')
 

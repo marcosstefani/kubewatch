@@ -9,7 +9,7 @@ class Element(Enum):
     SERVICE = 'services'
     PERSISTENT_VOLUME = 'pv'
     PERSISTENT_VOLUME_CLAIM = 'pvc'
-    REPLICA_SET = 'replicaset'
+    REPLICA_SET = 'rs'
 
 def get_information(element):
     value = subprocess.Popen("kubectl get {el} -o wide".format(el=element.value), stdout=subprocess.PIPE, shell=True)

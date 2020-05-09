@@ -5,7 +5,7 @@ from model.kubernetes import get_information, Element
 
 class PodService:
     @classmethod
-    def getAll(cls):
+    def all(cls):
         values = get_information(Element.POD)
         print (values)
         pods = []

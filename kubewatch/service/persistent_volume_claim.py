@@ -5,7 +5,7 @@ from model.kubernetes import get_information, Element
 
 class PersistentVolumeClaimService:
     @classmethod
-    def getAll(cls):
+    def all(cls):
         values = get_information(Element.PERSISTENT_VOLUME_CLAIM)
         print (values)
         pvcs = []

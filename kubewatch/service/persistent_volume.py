@@ -5,7 +5,7 @@ from model.kubernetes import get_information, Element
 
 class PersistentVolumeService:
     @classmethod
-    def getAll(cls):
+    def all(cls):
         values = get_information(Element.PERSISTENT_VOLUME)
         print (values)
         pvs = []
