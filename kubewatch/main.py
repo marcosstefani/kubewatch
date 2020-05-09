@@ -3,13 +3,14 @@ from flask_restful import Resource, Api
 
 from model.pod import Pod
 from service.pod import PodService
+from service.service import ServiceService
 
 app = Flask(__name__)
 api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return PodService.getAll()
+        return ServiceService.getAll()
 
 api.add_resource(HelloWorld, '/')
 

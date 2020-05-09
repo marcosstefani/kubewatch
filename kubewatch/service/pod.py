@@ -1,23 +1,15 @@
 import subprocess
 
 from model.pod import Pod
+from model.kubernetes import get_information, Element
 
 class PodService:
     @classmethod
     def getAll(cls):
-        value = subprocess.Popen("kubectl get pods -o wide", stdout=subprocess.PIPE, shell=True)
-        (output, err) = value.communicate()
-        output = output.decode("utf-8").split('\n')[:-1]
-        
+        values = get_information(Element.POD)
+        print (values)
         pods = []
-        if (len(output) <= 1):
-            print ("Não encontrei pods")
-            return pods
-        del output[0]
-        
-        for l in output:
-            text = ' '.join(l.split())
-            values = text.split(' ')
-            pod = Pod(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8])
+        for value in values:
+            pod = Pod(value[0], value[1], value[2], value[3], value[4], value[5], value[6], value[7], value[8])
             pods.append(pod.json())
         return pods
