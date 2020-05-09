@@ -1,17 +1,17 @@
 from flask import Flask
 from flask_restful import Resource, Api
 
-from model.pod import Pod
 from service.pod import PodService
 from service.service import ServiceService
 from service.persistent_volume import PersistentVolumeService
+from service.persistent_volume_claim import PersistentVolumeClaimService
 
 app = Flask(__name__)
 api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return PersistentVolumeService.getAll()
+        return PersistentVolumeClaimService.getAll()
 
 api.add_resource(HelloWorld, '/')
 
