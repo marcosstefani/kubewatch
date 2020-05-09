@@ -1,4 +1,6 @@
 import json
+import subprocess
+from enum import Enum
 
 class Model:
     def json(self):

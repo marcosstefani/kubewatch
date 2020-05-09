@@ -4,13 +4,14 @@ from flask_restful import Resource, Api
 from model.pod import Pod
 from service.pod import PodService
 from service.service import ServiceService
+from service.persistent_volume import PersistentVolumeService
 
 app = Flask(__name__)
 api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return ServiceService.getAll()
+        return PersistentVolumeService.getAll()
 
 api.add_resource(HelloWorld, '/')
 
