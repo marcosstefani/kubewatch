@@ -18,6 +18,6 @@ class PodService:
         for l in output:
             text = ' '.join(l.split())
             values = text.split(' ')
-            pod = Pod(values[0], values[1], values[2], values[3], values[4], values[5], values[6])
+            pod = Pod(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8])
             pods.append(pod.json())
         return pods

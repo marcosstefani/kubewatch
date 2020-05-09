@@ -10,8 +10,6 @@ api = Api(app)
 class HelloWorld(Resource):
     def get(self):
         return PodService.getAll()
-        # return { 'hello': 'oi' }
-        # return Pod('marcos', 2, '20m').json()
 
 api.add_resource(HelloWorld, '/')
 
