@@ -1,8 +1,15 @@
 import subprocess
 from enum import Enum
 
-class Kubernetes:
-    initialized = False
+from model.model import Model
+
+class Kubernetes(Model):
+    def __init__(self, pods, services, persistent_volumes, persistent_volume_claims, replica_sets):
+        self.pods = pods
+        self.services = services
+        self.persistent_volumes = persistent_volumes
+        self.persistent_volume_claims = persistent_volume_claims
+        self.replica_sets = replica_sets
 
 class Element(Enum):
     POD = 'pods'
@@ -18,7 +25,7 @@ def get_information(element):
 
     result = []
     if (len(output) <= 1):
-        print ("Não encontrei pods")
+        print ("Not found: {el}".format(el=element))
         return result
     del output[0]
 
