@@ -8,6 +8,8 @@ from controller.persistent_volume import PersistentVolumeController
 from controller.persistent_volume_claim import PersistentVolumeClaimController
 from controller.replica_set import ReplicaSetController
 
+from service.util import host, port
+
 app = Flask(__name__)
 api = Api(app)
 
@@ -23,4 +25,4 @@ api.add_resource(PersistentVolumeClaimController, '/persistent_volume_claims/')
 api.add_resource(ReplicaSetController, '/replica_sets/')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host=host(), port=port())
