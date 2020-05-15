@@ -18,11 +18,11 @@ class Kubernetes(Resource):
         return KubernetesService.all()
 
 api.add_resource(Kubernetes, '/')
-api.add_resource(PodController, '/pods/')
-api.add_resource(ServiceController, '/services/')
-api.add_resource(PersistentVolumeController, '/persistent_volumes/')
-api.add_resource(PersistentVolumeClaimController, '/persistent_volume_claims/')
-api.add_resource(ReplicaSetController, '/replica_sets/')
+api.add_resource(PodController, '/pod/')
+api.add_resource(ServiceController, '/service/')
+api.add_resource(PersistentVolumeController, '/persistent_volume/')
+api.add_resource(PersistentVolumeClaimController, '/persistent_volume_claim/')
+api.add_resource(ReplicaSetController, '/replica_set/')
 
 if __name__ == '__main__':
     app.run(debug=True, host=host(), port=port())

@@ -16,8 +16,8 @@ Initially we developed the get function that will bring all the pods, services, 
 
 ## APIs already created:
 - Get All Information: `GET /`
-- Get All Pods: `GET /pods`
-- Get All Services: `GET /services`
-- Get All PV: `GET /persistent_volumes`
-- Get All PVC: `GET /persistent_volume_claims`
-- Get All Replica Sets: `GET /replica_sets`
+- Get All Pods: `GET /pod`
+- Get All Services: `GET /service`
+- Get All PV: `GET /persistent_volume`
+- Get All PVC: `GET /persistent_volume_claim`
+- Get All Replica Sets: `GET /replica_set`
