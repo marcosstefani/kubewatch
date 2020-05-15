@@ -1,7 +1,7 @@
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import Api
 
-from service.kubernetes import KubernetesService
+from controller.kubernetes import KubernetesController
 from controller.pod import PodController
 from controller.service import ServiceController
 from controller.persistent_volume import PersistentVolumeController
@@ -13,11 +13,7 @@ from service.util import host, port
 app = Flask(__name__)
 api = Api(app)
 
-class Kubernetes(Resource):
-    def get(self):
-        return KubernetesService.all()
-
-api.add_resource(Kubernetes, '/')
+api.add_resource(KubernetesController, '/')
 api.add_resource(PodController, '/pod/')
 api.add_resource(ServiceController, '/service/')
 api.add_resource(PersistentVolumeController, '/persistent_volume/')
